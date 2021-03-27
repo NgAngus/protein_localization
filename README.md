@@ -4,13 +4,13 @@ Based on https://drivendata.github.io/cookiecutter-data-science/
 
 ```
 .
-├── Makefile                <- tasks
-├── config.yml              <- config file in YAML, can be exported as env vars if needed
-├── config-private.yml      <- config file with private config (password, api keys, etc.)
+├── Makefile
+├── config.yml
+├── config-private.yml
 ├── data
-│   └── raw
+│   └── raw             <- raw data from Kaggle
 │   ├── intermediate
-│   ├── processed
+│   ├── processed       <- processed data from Kaggle (so fit models from stuff here)
 │   ├── temp
 ├── results
 │   ├── outputs
