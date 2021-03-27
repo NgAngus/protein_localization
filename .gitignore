@@ -1,0 +1,7 @@
+/.env
+/config-private.yml
+.gitkeep
+
+/data
+/results
+.DS_Store
