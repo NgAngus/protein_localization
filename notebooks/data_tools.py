@@ -4,7 +4,7 @@ field_descriptions_fpath = "../data/raw/field_descriptions.txt"
 
 
 def feature_name(field_df, col_num):
-    field_name = FIELD_DATAFRAME.iloc[col_num][0].strip(":")
+    field_name = field_df.iloc[col_num][0].strip(":")
     return field_name.strip()
 
 
@@ -13,3 +13,15 @@ def parse_field_descriptions(fpath):
 	df[0] = df[0].str.rstrip(":")
 	df[0] = df[0].str.lower()
 	return df
+
+
+def col_to_feat_map(fpath):
+	fields = parse_field_descriptions(fpath)
+	d = fields[0].to_dict().items()
+	return {col : feat_name.strip() for col, feat_name in d}
+
+
+def feat_to_col_map(fpath):
+	fields = parse_field_descriptions(fpath)
+	d = fields[0].to_dict().items()
+	return {feat_name.strip() : col for col, feat_name in d}
