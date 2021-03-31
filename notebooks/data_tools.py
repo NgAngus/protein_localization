@@ -9,19 +9,19 @@ def feature_name(field_df, col_num):
 
 
 def parse_field_descriptions(fpath):
-	df = pd.read_csv(fpath, delimiter="\t", header=None)
-	df[0] = df[0].str.rstrip(":")
-	df[0] = df[0].str.lower()
-	return df
+    df = pd.read_csv(fpath, delimiter="\t", header=None)
+    df[0] = df[0].str.rstrip(":")
+    df[0] = df[0].str.lower()
+    return df
 
 
 def col_to_feat_map(fpath):
-	fields = parse_field_descriptions(fpath)
-	d = fields[0].to_dict().items()
-	return {col : feat_name.strip() for col, feat_name in d}
+    fields = parse_field_descriptions(fpath)
+    d = fields[0].to_dict().items()
+    return {col : feat_name.strip() for col, feat_name in d}
 
 
 def feat_to_col_map(fpath):
-	fields = parse_field_descriptions(fpath)
-	d = fields[0].to_dict().items()
-	return {feat_name.strip() : col for col, feat_name in d}
+    fields = parse_field_descriptions(fpath)
+    d = fields[0].to_dict().items()
+    return {feat_name.strip() : col for col, feat_name in d}
