@@ -1,6 +1,9 @@
 import pandas as pd
+import functools
 
-field_descriptions_fpath = "../data/raw/field_descriptions.txt"
+LOCAL = True
+data_fpath = '../data/raw/' if LOCAL else '/kaggle/input/protein-localization/'
+field_descriptions_fpath = f"{data_fpath}field_descriptions.txt"
 
 
 def feature_name(field_df, col_num):
