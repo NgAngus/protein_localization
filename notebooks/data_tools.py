@@ -28,3 +28,10 @@ def feat_to_col_map(fpath):
     fields = parse_field_descriptions(fpath)
     d = fields[0].to_dict().items()
     return {feat_name.strip() : col for col, feat_name in d}
+
+
+def plot_train_test_feats(df1, df2, feat):
+    pd.DataFrame({
+        'train' : df1[feat].astype(str).value_counts().sort_index(),
+        'kaggle' : df2[feat].astype(str).value_counts().sort_index(),
+    }).plot.bar(rot=70);
