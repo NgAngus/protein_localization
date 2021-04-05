@@ -1,6 +1,6 @@
-# Data science project structure
+# STAT 441: Protein Localization
 
-Based on https://drivendata.github.io/cookiecutter-data-science/
+https://www.kaggle.com/c/protein-localization/
 
 ```
 .
